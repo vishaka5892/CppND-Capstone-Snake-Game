@@ -2,6 +2,35 @@
 #include <cmath>
 #include <iostream>
 
+//Function to get the starting speed from the user
+void Snake::SetStartSpeed()
+{
+  float usrSpeed;
+  char rangeBuff[25];
+  char usrAns[25];
+  sprintf(rangeBuff, "%0.1f and %0.1f", minimumStartSpeed, maximumStartSpeed);
+  std::string rangeStr(rangeBuff);
+
+  std::cout << "What would you like the starting speed of the snake be?" << std::endl;
+  std::cout << "Select a number between " << rangeStr << std::endl;
+
+  while (true)
+  {
+    int userIn = scanf("%f", &usrSpeed);
+    if (userIn)
+    {
+      if (usrSpeed >= minimumStartSpeed && usrSpeed <= maximumStartSpeed)
+      {
+        speed = usrSpeed;
+        return;
+      }
+    }
+    std::cerr << "\n\n\n Error! Please provide a valid value between " << rangeStr << std::endl;
+  }
+}
+
+Snake::Snake(){};
+
 void Snake::Update() {
   SDL_Point prev_cell{
       static_cast<int>(head_x),
@@ -18,6 +47,8 @@ void Snake::Update() {
     UpdateBody(current_cell, prev_cell);
   }
 }
+
+float Snake::head_total_distance = 0;
 
 void Snake::UpdateHead() {
   switch (direction) {
@@ -41,6 +72,16 @@ void Snake::UpdateHead() {
   // Wrap the Snake around to the beginning if going off of the screen.
   head_x = fmod(head_x + grid_width, grid_width);
   head_y = fmod(head_y + grid_height, grid_height);
+
+HeadDistanceTravel(head_total_distance, head_x, head_y, x_prev, y_prev);
+}
+
+void Snake::HeadDistanceTravel(float &head_tot_dist, float head_x, float head_y, float &x_prev, float &y_prev)
+{
+
+  head_tot_dist = head_tot_dist + abs(head_x - x_prev) + abs(head_y - y_prev);
+  x_prev = head_x;
+  y_prev = head_y;
 }
 
 void Snake::UpdateBody(SDL_Point &current_head_cell, SDL_Point &prev_head_cell) {

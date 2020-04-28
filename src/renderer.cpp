@@ -1,6 +1,10 @@
 #include "renderer.h"
 #include <iostream>
 #include <string>
+#include <mutex>
+#include <thread>
+
+std::mutex mutex;
 
 Renderer::Renderer(const std::size_t screen_width,
                    const std::size_t screen_height,
@@ -26,7 +30,7 @@ Renderer::Renderer(const std::size_t screen_width,
   }
 
   // Create renderer
-  sdl_renderer = SDL_CreateRenderer(sdl_window, -1, SDL_RENDERER_ACCELERATED);
+  sdl_renderer = SDL_CreateRenderer(sdl_window, 2, SDL_RENDERER_ACCELERATED);
   if (nullptr == sdl_renderer) {
     std::cerr << "Renderer could not be created.\n";
     std::cerr << "SDL_Error: " << SDL_GetError() << "\n";
@@ -76,6 +80,7 @@ void Renderer::Render(Snake const snake, SDL_Point const &food) {
 }
 
 void Renderer::UpdateWindowTitle(int score, int fps) {
+  std::lock_guard<std::mutex> lock(mutex);
   std::string title{"Snake Score: " + std::to_string(score) + " FPS: " + std::to_string(fps)};
   SDL_SetWindowTitle(sdl_window, title.c_str());
 }
