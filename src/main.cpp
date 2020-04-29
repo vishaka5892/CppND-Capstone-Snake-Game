@@ -29,13 +29,14 @@ int main() {
   newgamer->SetGamerGameTime();
   tSnake.head_total_distance = 0;
 
+  Game game(kGridWidth, kGridHeight);
+  game.UpdtStartingSpeed();
+  
   std::cout << "_________ Let the Game Begin! All the best!! ____________" << std::endl;
 
   Renderer renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
   Controller controller;
   
-  Game game(kGridWidth, kGridHeight);
-  game.UpdtStartingSpeed();
   game.Run(controller, renderer, kMsPerFrame);
 
  
