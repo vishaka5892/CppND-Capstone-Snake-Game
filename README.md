@@ -23,11 +23,9 @@ the starting speed of the snake in the game is to be chosen by the user.
 
 The game board is launched once a valid speed from the range given, is chosen by the user. The user can move the snake around using arrow keys.
 
-Upon exiting from the game by 1) "snake eating itself" or 2) pressing the "X" button the top right corner of the game board 
-or 3) pressing ctrl+C in the terminal, 
+Upon exiting from the game by 1) pressing the "X" button the top right corner of the game board 
+or 2) pressing ctrl+C in the terminal, 
 a "QUIT" and "Game has terminated successfully!" messages are displayed on the terminal followed by the name of the user, points scored, size of the snake, distance of head travelled by the snake and time of the game.
-
-
 
 ## Dependencies for Running Locally
 * cmake >= 3.7
@@ -84,8 +82,6 @@ An example of this can be seen in the declaration of the function HeadDistanceTr
 > A mutex or lock (e.g. std::lock_guard or `std::unique_lock) is used to protect data that is shared across multiple threads in the project code.
 
 To meet this requirement, a lock mechanism (lock_guard<std::mutex>) is used in renderer.cpp (line 83)
-
-
 
 ## Basic Build Instructions
 

@@ -31,7 +31,7 @@ int main() {
 
   Game game(kGridWidth, kGridHeight);
   game.UpdtStartingSpeed();
-  
+
   std::cout << "_________ Let the Game Begin! All the best!! ____________" << std::endl;
 
   Renderer renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
@@ -49,9 +49,9 @@ int main() {
     std::cout << "Gamer Name :: " << actual_gamer_name << std::endl;
     std::cout << "Game Score :: " << game.GetScore() << "\n";
     gamer_score = game.GetScore();
-    std::cout << "Game Size :: " << game.GetSize() << "\n";
+    std::cout << "Snake Size :: " << game.GetSize() << "\n";
     time_of_game = newgamer->GetGamerGameTime();
-    std::cout << "Game Time :: " << time_of_game << "\n";
+    std::cout << "Game Time :: " << time_of_game;
     std::cout << "Snake head total distance :: " << tSnake.head_total_distance << std::endl;
     std::cout << "----------------------------------- " << std::endl;
 
