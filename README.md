@@ -76,7 +76,7 @@ The C++ Guide by Google was used to for any needed documentation. An example can
 
 > At least two variables are defined as references, or two functions use pass-by-reference in the project code.
 
-An example of this can be seen in the declaration of the function HeadDistanceTravel() in snake.h
+An example of this can be seen in the declaration of the function HeadDistanceCovered() in snake.h
 
 7. `Concurrency` - A mutex or lock is used in the project
 

@@ -34,7 +34,7 @@ string Gamer::GetGamerGameTime()
 void Gamer::SetGamerName()
 {
   string gamer_name;
-  std::cout << " Gamer Name : " << gamer_name;
+  std::cout << "Gamer Name : " << gamer_name;
   std::cin >> gamer_name;
   this->gamer_name = gamer_name;
 }
@@ -53,5 +53,5 @@ void Gamer::SetGamerGameTime()
   //convert to char
   char* dat = ctime(&curr);
   gamer_gametime = dat;
-  std::cout << " Game Time : " << gamer_gametime;
+  std::cout << "Game Time : " << gamer_gametime;
 }

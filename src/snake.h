@@ -23,7 +23,7 @@ class Snake {
   void GrowBody();
   bool SnakeCell(int x, int y);
 
- void HeadDistanceTravel(float &h_tot_dist, float h_x, float head_y, float &x_prev, float &y_prev);
+ void HeadDistanceCovered(float &h_tot_dist, float h_x, float head_y, float &x_prev, float &y_prev);
   
   Direction direction = Direction::kUp;
 

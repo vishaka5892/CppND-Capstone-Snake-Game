@@ -11,8 +11,8 @@ void Snake::SetStartSpeed()
   sprintf(rangeBuff, "%0.1f and %0.1f", minimumStartSpeed, maximumStartSpeed);
   std::string rangeStr(rangeBuff);
 
-  std::cout << "What would you like the starting speed of the snake be?" << std::endl;
-  std::cout << "Select a number between " << rangeStr << std::endl;
+  std::cout << "\n" <<"It's Time For Fun! What Would You Like The Starting Speed Of The Snake Be?" << std::endl;
+  std::cout << "Select A Number Between " << rangeStr << std::endl;
 
   while (true)
   {
@@ -25,7 +25,7 @@ void Snake::SetStartSpeed()
         return;
       }
     }
-    std::cerr << "\n\n\n Error! Please provide a valid value between " << rangeStr << std::endl;
+    std::cerr << "\n"<< "Error! Please provide a valid value between " << rangeStr << std::endl;
   }
 }
 
@@ -73,13 +73,13 @@ void Snake::UpdateHead() {
   head_x = fmod(head_x + grid_width, grid_width);
   head_y = fmod(head_y + grid_height, grid_height);
 
-HeadDistanceTravel(head_total_distance, head_x, head_y, x_prev, y_prev);
+HeadDistanceCovered(head_total_distance, head_x, head_y, x_prev, y_prev);
 }
 
-void Snake::HeadDistanceTravel(float &head_tot_dist, float head_x, float head_y, float &x_prev, float &y_prev)
+void Snake::HeadDistanceCovered(float &head_total_distance, float head_x, float head_y, float &x_prev, float &y_prev)
 {
 
-  head_tot_dist = head_tot_dist + abs(head_x - x_prev) + abs(head_y - y_prev);
+  head_total_distance = head_total_distance + abs(head_x - x_prev) + abs(head_y - y_prev);
   x_prev = head_x;
   y_prev = head_y;
 }
