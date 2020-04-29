@@ -43,21 +43,22 @@ a "QUIT" and "Game has terminated successfully!" messages are displayed on the t
   * Windows: recommend using [MinGW](http://www.mingw.org/)
 
 ## Rubrics Items Satisfied
-1. `Object Oriented Programming` - The project uses Object Oriented Programming techniques.`
 
-> The project code has classes with class attributes to contain the data, and class methods to perform tasks.
-
-To meet this requirement, a `Platform` class was created in `platform.h` to hold information about the system platform. The class uses the member functions `getPlatform` and `displayPlatform` to fetch and printout the user's detected system platform. Also a `Gamer` class was created inside in `user.h` to get the player's name, game time and player score.
-
-2. `Object Oriented Programming` - Classes use appropriate access specifiers for class members.
-
-> All class members are explicitly specified as public, protected or private.
-
-3. `Loops, functions, I/O` - Project accepts user input and processes the input
+1. `Loops, functions, I/O` - The project accepts user input and processes the input
 
 > The project accepts input from the user as part of the program.
 
  Project lets the user to input their name and choose the starting speed of the snake.
+
+2. `Object Oriented Programming` - The project uses Object Oriented Programming techniques.`
+
+> The project code has classes with class attributes to contain the data, and class methods to perform tasks.
+
+To meet this requirement, a `Platform` class was created in `platform.h` to hold information about the system platform. The class uses the member functions `getPlatform` and `displayPlatform` to fetch and printout the user's detected system platform. Also a `Gamer` class was created in `user.h` to get the player's name, game time and player score.
+
+3. `Object Oriented Programming` - Classes use appropriate access specifiers for class members.
+
+> All class data members are explicitly specified as public, protected, or private.
 
 4.  `Object Oriented Programming` - Class constructors utilize member initialization lists.
 
@@ -69,7 +70,7 @@ Within `platform.h` for the private variable `platform` the default argument is 
 
 > All class member functions document their effects, either through function names, comments, or formal documentation. Member functions do not change program state in undocumented ways.
 
-The C++ Guide by Google was used to for any needed documentation. An example can be found within `platform.h` where a simple comment is used to describe what the function `getPlatform` does. 
+The C++ Guide by Google was used to for any needed documentation. An example can be found in `platform.h` where a comment is used to describe what the function `getPlatform` does. 
 
 6. `Memory Management` - The project makes use of references in function declarations. 
 
