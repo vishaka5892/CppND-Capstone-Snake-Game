@@ -25,7 +25,7 @@ The game board is launched once a valid speed from the range given, is chosen by
 
 Upon exiting from the game by 1) "snake eating itself" or 2) pressing the "X" button the top right corner of the game board 
 or 3) pressing ctrl+C in the terminal, 
-a "QUIT" with "Game has terminated successfully!" message is displayed on the terminal followed by the name of the user, points scored, size of the snake, distance of head travelled by the snake and time of the game.
+a "QUIT" and "Game has terminated successfully!" messages are displayed on the terminal followed by the name of the user, points scored, size of the snake, distance of head travelled by the snake and time of the game.
 
 
 
