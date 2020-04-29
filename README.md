@@ -12,7 +12,7 @@ There are four components:
 				
 - Game component constructs and maintains the game board and placement of the game elements like the snake and food.
 
-- Snake component constructs and maintains the snake object as it moves across the board gaining points and checking if it ran into itself.
+- Snake component constructs and maintains the snake object as it moves across the board gaining points and checking if it ate itself (ran into self).
 
 - Controller component receives input from the user in order to control movement of the snake.
 
@@ -49,7 +49,7 @@ a "QUIT" with "Game has terminated successfully!" message is displayed on the te
 
 > The project code has classes with class attributes to contain the data, and class methods to perform tasks.
 
-To meet this requirement, a `Platform` class was created in `platform.h` to hold information about the system platform. The class uses the member functions `getPlatform` and `displayPlatform` to fetch and printout the user's detected system platform. Also a `Gamer` class was created inside in `user,h` to get the player's name, game time and player score.
+To meet this requirement, a `Platform` class was created in `platform.h` to hold information about the system platform. The class uses the member functions `getPlatform` and `displayPlatform` to fetch and printout the user's detected system platform. Also a `Gamer` class was created inside in `user.h` to get the player's name, game time and player score.
 
 2. `Object Oriented Programming` - Classes use appropriate access specifiers for class members.
 
